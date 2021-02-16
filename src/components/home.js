@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import './index.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const GridWrapper = styled.div`
   display: grid;
