@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 import { Home } from './components/home';
 import { Chat } from './components/chat';
@@ -22,7 +21,7 @@ const sidenavbar = (
         </div>
         <header id="sideNavBarHeader">
           Neville Pinto
-          <img style={{paddingLeft:"10px"}}  src={chevrondown} alt="Options" /> {/*Need to fix this*/}
+          <img src={chevrondown} alt="Options" /> {/*Need to fix this*/}
         </header>
         <Link to="/home">
           Home
