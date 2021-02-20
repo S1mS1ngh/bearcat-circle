@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import '../index.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class SignUp extends Component {
     render() {
