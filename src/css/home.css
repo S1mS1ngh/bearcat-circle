@@ -21,7 +21,6 @@
 /* The home page card*/
 #groupsCard {
     box-shadow: 0px 2px 10px lightgray;
-    align-content: end;
     margin: 0 0 15px 40px;
     width: 580px;
     height: 450px;

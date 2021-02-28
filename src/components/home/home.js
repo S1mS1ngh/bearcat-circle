@@ -2,8 +2,9 @@ import React from 'react';
 import '../../css/home.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { Container, Row, Col, Card } from 'react-bootstrap';
+import {Container, Row, Col, Card, Button} from 'react-bootstrap';
 import HomeForum from "./home.forum";
+import AddGroup from "../../static/plus_button.svg";
 
 export default class Home extends React.Component {
     render() {
@@ -17,8 +18,31 @@ export default class Home extends React.Component {
                         </Col>
                         <Col>
                             <Row>
-                                <Card fluid id="groupsCard">
-                                    <Card.Header id="groupsCardHeader">Groups</Card.Header>
+                                <Card id="groupsCard">
+                                    <Card.Header id="groupsCardHeader">
+                                        Groups
+                                        <Button style={{padding: "0 0 0 0", backgroundColor: "transparent", borderColor:"transparent", marginLeft:"345px"}}>
+                                            <img src={AddGroup} alt="Add Group" />
+                                        </Button>
+                                    </Card.Header>
+                                        <Container fluid>
+                                            <Row>
+                                                <Col>
+                                                    1
+                                                </Col>
+                                                <Col>
+                                                    2
+                                                </Col>
+                                            </Row>
+                                            <Row>
+                                                <Col>
+                                                    3
+                                                </Col>
+                                                <Col>
+                                                    4
+                                                </Col>
+                                            </Row>
+                                        </Container>
                                 </Card>
                             </Row>
                             <Row>
