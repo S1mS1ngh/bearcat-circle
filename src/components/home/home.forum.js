@@ -1,6 +1,7 @@
 import React from 'react';
 import '../../css/home.forum.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {Card} from "react-bootstrap";
 
 export default class HomeForum extends React.Component {
     constructor(props) {
@@ -29,14 +30,13 @@ export default class HomeForum extends React.Component {
         } else {
             return (
                 <div className="forum">
-                    <ul>
-                        {items.map(item => (
-                            <li key={item.id}>
-                                <h3>{item.title}</h3>
-                                <p>{item.body}</p>
-                            </li>
-                        ))}
-                    </ul>
+                    {items.map(item => (
+                        <Card>
+                            {item.id}
+                            <Card.Title>{item.title}</Card.Title>
+                            <Card.Body>{item.body}</Card.Body>
+                        </Card>
+                    ))}
                 </div>
             );
         }

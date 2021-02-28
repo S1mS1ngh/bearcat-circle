@@ -48,6 +48,23 @@ export default class Home extends React.Component {
                             <Row>
                                 <Card id="groupsCard">
                                     <Card.Header id="groupsCardHeader">Explore</Card.Header>
+                                    <Container fluid>
+                                        <Row>
+                                            <Col>
+                                                1
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col>
+                                                2
+                                            </Col>
+                                        </Row>
+                                        <Row>
+                                            <Col>
+                                                3
+                                            </Col>
+                                        </Row>
+                                    </Container>
                                 </Card>
                             </Row>
                         </Col>
