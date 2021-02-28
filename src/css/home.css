@@ -1,0 +1,20 @@
+/* The side navigation menu */
+.home {
+    height: 100%;
+    width: 1630px;
+    position: fixed;
+
+    z-index: 0;
+    background-color: #E8E8E8;
+}
+
+/* The home page header */
+.home h1 {
+    margin: 30px 0px 45px 60px;
+    text-decoration: none;
+    font-size: 36px;
+    font-weight: 500;
+    color: #0D1C2E;
+    display: block;
+    text-align: left;
+}

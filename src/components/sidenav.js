@@ -3,7 +3,7 @@ import '../index.css';
 import '../css/sidenav.css'
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
-import Home from '../components/home';
+import Home from './home/home';
 import { Chat } from './chat';
 import { Groups } from './groups';
 import { Explore } from './explore';
@@ -13,7 +13,7 @@ import Login from "../components/login";
 import userphoto from "../static/user_photo.png";
 import chevrondown from "../static/chevron_down.png";
 
-class Sidenav extends React.Component {
+export default class Sidenav extends React.Component {
     render() {
         return (
             <Router>
@@ -64,5 +64,3 @@ class Sidenav extends React.Component {
         )
     }
 }
-
-export default Sidenav;
