@@ -2,24 +2,29 @@ import React from 'react';
 import '../../css/home.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Card } from 'react-bootstrap';
+import HomeForum from "./home.forum";
 
 export default class Home extends React.Component {
     render() {
         return (
             <div className="home">
                 <h1>Welcome</h1>
-                <Container>
+                <Container fluid>
                     <Row>
                         <Col>
-                            1
+                            <HomeForum/>
                         </Col>
                         <Col>
                             <Row>
-                                2
+                                <Card fluid id="groupsCard">
+                                    <Card.Header id="groupsCardHeader">Groups</Card.Header>
+                                </Card>
                             </Row>
                             <Row>
-                                3
+                                <Card id="groupsCard">
+                                    <Card.Header id="groupsCardHeader">Explore</Card.Header>
+                                </Card>
                             </Row>
                         </Col>
                     </Row>

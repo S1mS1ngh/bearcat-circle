@@ -1,20 +1,41 @@
-/* The side navigation menu */
+/* Home page */
 .home {
     height: 100%;
-    width: 1630px;
+    width: 100%;
     position: fixed;
-
     z-index: 0;
     background-color: #E8E8E8;
 }
 
 /* The home page header */
 .home h1 {
-    margin: 30px 0px 45px 60px;
+    margin: 30px 0 25px 60px;
     text-decoration: none;
     font-size: 36px;
     font-weight: 500;
     color: #0D1C2E;
     display: block;
     text-align: left;
+}
+
+/* The home page card*/
+#groupsCard {
+    box-shadow: 0px 2px 10px lightgray;
+    align-content: end;
+    margin: 0 0 15px 40px;
+    width: 580px;
+    height: 450px;
+    border-radius: 6px;
+    display: block;
+}
+
+/* The home page card header*/
+#groupsCardHeader{
+    height: 110px;
+    padding-left: 55px;
+    font-size: 24px;
+    font-weight: 500;
+    color: #0D1C2E;
+    display: flex;
+    align-items: center;
 }

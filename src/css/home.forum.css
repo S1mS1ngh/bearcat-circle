@@ -1,0 +1,7 @@
+/* Home forum component */
+.forum {
+    height: 100%;
+    width: 850px;
+    position: fixed;
+    z-index: 0;
+}
