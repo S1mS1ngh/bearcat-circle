@@ -1,20 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
 import '../index.css';
+import '../css/home.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-const GridWrapper = styled.div`
-  display: grid;
-  grid-gap: 10px;
-  margin-left: 6em;
-  margin-right: 6em;
-  grid-template-columns: repeat(12, 1fr);
-  grid-auto-rows: minmax(25px, auto);
-`;
+class Home extends React.Component {
+    render() {
+        return (
+            <div>This is for the home page</div>
+        )
+    }
+}
 
-export const Home = (props) => (
-   <GridWrapper>
-     <p>This is a paragraph and I am writing on the home page</p>
-     <p>This is another paragraph, hi hey hello whatsup yo</p>
-   </GridWrapper>
-)
+export default Home;
