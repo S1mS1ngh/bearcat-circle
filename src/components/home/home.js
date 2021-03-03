@@ -23,7 +23,7 @@ export default class Home extends React.Component {
                                 <Card className="groupsCard">
                                     <Card.Header id="groupsCardHeader">
                                         Groups
-                                        <Button style={{padding: "0 0 0 0", backgroundColor: "transparent", borderColor:"transparent", marginLeft:"345px"}}>
+                                        <Button style={{padding: "0 0 0 0", backgroundColor: "transparent", borderWidth:"0", marginLeft:"347px"}}>
                                             <img src={AddGroup} alt="Add Group" />
                                         </Button>
                                     </Card.Header>

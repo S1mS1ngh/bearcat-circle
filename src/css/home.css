@@ -74,7 +74,12 @@
     border-color: #30475E;
 }
 
-.exploreCard Button:hover {
+.exploreCard Button:hover{
+    background: #30475E;
+    border-color: #30475E;
+}
+
+.exploreCard Button:focus{
     background: #30475E;
     border-color: #30475E;
 }

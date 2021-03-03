@@ -1,7 +1,7 @@
 import React from 'react';
 import '../../css/home.forum.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Card} from "react-bootstrap";
+import ForumCard from "./forum.card";
 
 export default class HomeForum extends React.Component {
     constructor(props) {
@@ -31,11 +31,7 @@ export default class HomeForum extends React.Component {
             return (
                 <div className="forum">
                     {items.map(item => (
-                        <Card>
-                            {item.id}
-                            <Card.Title>{item.title}</Card.Title>
-                            <Card.Body>{item.body}</Card.Body>
-                        </Card>
+                        <ForumCard id = {item.id} title = {item.title} body = {item.body} />
                     ))}
                 </div>
             );
