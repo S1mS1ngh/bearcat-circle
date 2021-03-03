@@ -5,6 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Container, Row, Col, Card, Button} from 'react-bootstrap';
 import HomeForum from "./home.forum";
 import AddGroup from "../../static/plus_button.svg";
+import AddPost from "../../static/add_post.svg";
+import SearchBox from "../../static/search_box.svg";
+import FilterTags from "../../static/filter_tags.svg";
 
 //Todo Improve CSS styling if time permits
 
@@ -14,9 +17,20 @@ export default class Home extends React.Component {
             <div className="home">
                 <h1>Welcome</h1>
                 <Container fluid>
-                    <Row>
-                        <Col>
-                            <HomeForum/>
+                    <Row style={{marginLeft:"5px", marginRight: "50px"}}>
+                        <Col style={{marginLeft: "34px"}}>
+                            <Row style={{marginBottom: "30px"}}>
+                                <img src={SearchBox} alt="Search" />
+                                <Button style={{padding: "0 0 0 0", marginLeft: "30px", backgroundColor: "transparent", borderWidth:"0"}}>
+                                    <img src={AddPost} alt="Add Post" />
+                                </Button>
+                            </Row>
+                            <Row style={{marginBottom: "30px"}}>
+                                <img src={FilterTags} alt="Filter Tags" />
+                            </Row>
+                            <Row>
+                                <HomeForum/>
+                            </Row>
                         </Col>
                         <Col>
                             <Row>
