@@ -19,9 +19,9 @@
 }
 
 /* The home page card*/
-#groupsCard {
-    box-shadow: 0px 2px 10px lightgray;
-    margin: 0 0 15px 40px;
+.groupsCard {
+    box-shadow: 0 2px 10px lightgray;
+    margin: 0 0 30px 40px;
     width: 580px;
     height: 450px;
     border-radius: 6px;
@@ -37,4 +37,44 @@
     color: #0D1C2E;
     display: flex;
     align-items: center;
+}
+
+/* The home page card header*/
+#groupsCardGroupsButton{
+    height: 120px;
+    width: 240px;
+    padding: 0 0 0 0;
+    margin: 0 0 0 0;
+    font-size: 24px;
+    font-weight: 500;
+    color: #0D1C2E;
+    border-color: transparent;
+    align-items: center;
+}
+
+.exploreCard {
+    box-shadow: 0 2px 10px lightgray;
+    margin: 0 0 30px 40px;
+    width: 580px;
+    height: 450px;
+    border-radius: 6px;
+    display: block;
+}
+
+.exploreCard Button {
+    width: 500px;
+    height: 70px;
+    font-size: 18px;
+    font-weight: 500;
+    color: black;
+    background: #FFFFFF;
+    margin-bottom: 15px;
+    border-radius: 6px;
+    border-width: 5px;
+    border-color: #30475E;
+}
+
+.exploreCard Button:hover {
+    background: #30475E;
+    border-color: #30475E;
 }
