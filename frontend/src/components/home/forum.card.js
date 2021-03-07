@@ -11,7 +11,12 @@ export default class ForumCard extends React.Component {
                 <Container fluid>
                     <Row>
                         <Col md={{ span: 1}} style={{padding: "0"}}>
-                            <img src={BearcatCircle} alt="Profile" />
+                            <Row style={{marginLeft: "-5px"}}>
+                                <img src={BearcatCircle} alt="Profile" />
+                            </Row>
+                            {/*<Row style={{marginLeft: "-5px", marginTop: "20px"}}>*/}
+                            {/*    <img src={BearcatCircle} alt="Profile" />*/}
+                            {/*</Row>*/}
                         </Col>
                         <Col style={{padding: "0", marginLeft: "40px", marginRight: "40px"}}>
                             <h3>{this.props.id}</h3>

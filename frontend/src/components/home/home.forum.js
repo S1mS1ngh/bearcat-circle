@@ -13,7 +13,8 @@ export default class HomeForum extends React.Component {
     }
 
     componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/posts')
+        // fetch('https://jsonplaceholder.typicode.com/posts')
+        fetch('SampleForum.json')
             .then(res => res.json())
             .then(result => {
                 this.setState({

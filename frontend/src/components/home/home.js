@@ -20,13 +20,13 @@ export default class Home extends React.Component {
                     <Row style={{marginLeft:"5px", marginRight: "50px"}}>
                         <Col style={{marginLeft: "34px"}}>
                             <Row style={{marginBottom: "30px"}}>
-                                <img src={SearchBox} alt="Search" />
+                                <img src={SearchBox} style={{boxShadow: "0 2px 10px lightgray"}} alt="Search" />
                                 <Button style={{padding: "0 0 0 0", marginLeft: "30px", backgroundColor: "transparent", borderWidth:"0"}}>
                                     <img src={AddPost} alt="Add Post" />
                                 </Button>
                             </Row>
                             <Row style={{marginBottom: "30px"}}>
-                                <img src={FilterTags} alt="Filter Tags" />
+                                <img src={FilterTags} style={{boxShadow: "0 2px 10px lightgray"}} alt="Filter Tags" />
                             </Row>
                             <Row>
                                 <HomeForum/>
