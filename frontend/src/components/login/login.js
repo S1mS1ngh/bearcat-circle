@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import '../index.css';
+import '../../LoginApp.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default class Login extends Component {
