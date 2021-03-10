@@ -1,0 +1,40 @@
+.forumCard {
+    width: 850px;
+    height: 220px;
+    box-shadow: 0 2px 10px lightgray;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.forumCard img {
+    margin-left: 40px;
+    margin-top: 30px;
+}
+
+.forumCard h1, h3, h5 {
+    margin: 0;
+    overflow-y: hidden;
+}
+
+.forumCard h1 {
+    margin-top: 5px;
+    font-size: 30px;
+    font-weight: 700;
+    color: #0D1C2E;
+}
+
+.forumCard h3 {
+    margin-top: 23px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0D1C2E;
+}
+
+.forumCard h5 {
+    height: 100px;
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 30px;
+    color: #707C97;
+}

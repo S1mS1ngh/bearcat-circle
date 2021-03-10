@@ -6,7 +6,7 @@
 
 .groupsListCard {
     width: 580px;
-    height: 220px;
+    height: 200px;
     box-shadow: 0 2px 10px lightgray;
     border-radius: 6px;
     margin-bottom: 20px;
@@ -17,13 +17,13 @@
     height: 100px;
 }
 
-.groupsListCard h1, h3, h5 {
-    margin: 0;
+.groupsListCard h2, h4 {
+    margin-top: 10px;
     overflow-y: hidden;
 }
 
 .groupsListCard h2 {
-    margin-top: 71px;
+    margin-top: 60px;
     font-size: 24px;
     font-weight: 700;
     color: #0D1C2E;

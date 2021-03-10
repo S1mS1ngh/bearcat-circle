@@ -71,7 +71,7 @@ export default class GroupsList extends React.Component {
                                 <Col md={{ offset: 1 }} style={{paddingLeft: "30px"}}>
                                     <h2>Learning Community</h2>
                                     <h4>LC for CS Majors</h4>
-                                    <h4>Status: You guys got this!</h4>
+                                    <h4>Status: Nothing planned for this week!</h4>
                                 </Col>
                             </Row>
                         </Container>

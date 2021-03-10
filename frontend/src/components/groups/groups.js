@@ -7,6 +7,7 @@ import SearchBox from "../../static/groups/search_box.svg";
 import NewGroup from "../../static/groups/new_group_button.svg";
 import RecentUpdates from "../../static/groups/recent_updates.svg";
 import GroupsList from "./groups.list";
+import GroupsUpdates from "./groups.updates";
 
 //Todo Improve CSS styling if time permits
 
@@ -29,11 +30,11 @@ export default class Groups extends React.Component {
                             </Row>
                         </Col>
                         <Col md="auto">
-                            <Row>
+                            <Row style={{marginBottom: "30px"}}>
                                 <img src={RecentUpdates} style={{boxShadow: "0 2px 10px lightgray"}} alt="Search" />
                             </Row>
                             <Row>
-                                4
+                                <GroupsUpdates />
                             </Row>
                         </Col>
                     </Row>
