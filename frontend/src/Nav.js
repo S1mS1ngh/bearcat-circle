@@ -2,8 +2,8 @@ import React from 'react';
 import './index.css';
 import './App.css'
 import { Link } from "react-router-dom";
-import userphoto from "./static/user_photo.png";
-import chevrondown from "./static/chevron_down.png";
+import userphoto from "./static/nav/user_photo.png";
+import chevrondown from "./static/nav/chevron_down.png";
 
 export default class Sidenav extends React.Component {
     render() {

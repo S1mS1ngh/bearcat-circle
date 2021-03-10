@@ -3,15 +3,16 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import './App.css'
 import { BrowserRouter as Router} from "react-router-dom";
-import { Route, Switch } from "react-router"
+import {Route, Switch} from "react-router"
 
 import Home from './components/home/home';
 import Nav from './Nav'
 import { Chat } from './components/chat';
-import { Groups } from './components/groups';
+import Groups from './components/groups/groups';
 import { Explore } from './components/explore';
 import { Calender } from './components/calender';
 import { Settings } from './components/settings';
+import GroupOne from "./components/groups/group.one";
 
 export default class App extends React.Component {
     render() {
@@ -23,7 +24,15 @@ export default class App extends React.Component {
                         <Switch>
                             <Route path="/home" component={Home}/>
                             <Route path="/chat" component={Chat}/>
-                            <Route path="/groups" component={Groups}/>
+                            <Route
+                                path="/groups"
+                                render={({ match: { url } }) => (
+                                    <>
+                                        <Route path={`${url}/`} component={Groups} exact />
+                                        <Route path={`${url}/one`} component={GroupOne} exact />
+                                    </>
+                                )}
+                            />
                             <Route path="/explore" component={Explore}/>
                             <Route path="/calender" component={Calender}/>
                             <Route path="/settings" component={Settings}/>

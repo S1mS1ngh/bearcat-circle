@@ -2,7 +2,7 @@ import React from "react";
 import '../../css/forum.card.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card, Col, Container, Row} from "react-bootstrap";
-import BearcatCircle from "../../static/bearcat_circle.svg";
+import BearcatCircle from "../../static/home/bearcat_circle.svg";
 
 export default class ForumCard extends React.Component {
     render() {
