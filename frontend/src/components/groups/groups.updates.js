@@ -32,7 +32,7 @@ export default class GroupsUpdates extends React.Component {
             return (
                 <div className="updates">
                     {items.map(item => (
-                        <UpdateCard id = {item.id} title = {item.title} body = {item.body} />
+                        <UpdateCard name = {item.name} title = {item.title} body = {item.body} styleColor = {item.styleColor}/>
                     ))}
                 </div>
             );

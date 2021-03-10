@@ -1,32 +1,30 @@
 [
   {
     "userId": 1,
-    "id": "Elisa Merche",
-    "title": "UC Scholarship Hours",
-    "body": "I'm looking to get my Cincinnatus Hours filled, can anyone recommend a nearby nonprofit?"
-  },
-  {
-    "userId": 1,
-    "id": "Maeve Nataniel",
+    "styleColor": "#FCE38A",
+    "name": "Maeve Nataniel",
     "title": "New Environmental Club looking for members!",
     "body": "Do you have a passion for the planet? Want to save the turtles? Well then the Environmental Club is right for you! We will be having our next meeting on Wednesday at 6pm on Microsoft Teams. Here is the link to join: https://teams.microsoft.com/dl/launcher/launcher.html?url=%2F_%23%2Fl%2F..."
   },
   {
-    "userId": 1,
-    "id": "Anonymous Owl",
-    "title": "Is MATH2076 worth taking early?",
-    "body": "I'm a sophomore in my third semester of classes and I have the option to take one of my classes early since I'm ahead one class in the curriculum. Is it worth taking my math class early or should take something like a BOK? Lmk your thoughts. Thanks!"
+    "userId": 2,
+    "styleColor": "#F38181",
+    "name": "Professor Cohen",
+    "title": "Upcoming midterm study sessions",
+    "body": "We will be having a couple of study sessions to prepare you for the midterm next week. Please choose from any of the times below: "
   },
   {
-    "userId": 1,
-    "id": "Renza Vitaly",
-    "title": "The University of Cincinnati",
-    "body": "ullam et saepe reiciendis voluptatem adipisci\nsit amet autem assumenda provident rerum culpa\nquis hic commodi nesciunt rem tenetur doloremque ipsam iure\nquis sunt voluptatem rerum illo velit"
+    "userId": 3,
+    "styleColor": "#8381F3",
+    "name": "Jonas Natasja",
+    "title": "Lab 3 Question",
+    "body": "Hey guys, could someone help me with this lab question: As ionic charge increases, lattice energy increases. In order to calculate lattice energy, we would need to use Hess’s law. Just how we calculated enthalpy of a whole reaction by adding the enthalpy of parts, we could get lattice energy as the similar way. (He show the Born-Haber Cycle)\n1)Order of increasing lattice energy?\n"
   },
   {
-    "userId": 1,
-    "id": "Saibh Bjørn",
-    "title": "nesciunt quas odio",
-    "body": "repudiandae veniam quaerat sunt sed\nalias aut fugiat sit autem sed est\nvoluptatem omnis possimus esse voluptatibus quis\nest aut tenetur dolor neque"
+    "userId": 4,
+    "styleColor": "#F38181",
+    "name": "Shanelle Lenny",
+    "title": "Homework #4 Problem: 3",
+    "body": "Is anyone else having trouble getting the right answer for the problem?"
   }
 ]
