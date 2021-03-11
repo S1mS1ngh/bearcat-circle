@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../css/groups.css';
+import '../../css/groups/groups.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Button, Col, Container, Row} from "react-bootstrap";
 

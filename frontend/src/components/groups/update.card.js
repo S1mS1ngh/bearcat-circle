@@ -1,5 +1,5 @@
 import React from "react";
-import '../../css/update.card.css'
+import '../../css/groups/update.card.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card, Col, Container, Row} from "react-bootstrap";
 

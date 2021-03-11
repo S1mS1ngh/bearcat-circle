@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../css/groups.updates.css'
+import '../../css/groups/groups.updates.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import UpdateCard from "./update.card";
 

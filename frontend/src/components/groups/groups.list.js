@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../css/groups.list.css'
+import '../../css/groups/groups.list.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card, Col, Container, Row} from "react-bootstrap";
 
@@ -22,7 +22,7 @@ export default class GroupsList extends React.Component {
                                 </Col>
                                 <Col md={{ offset: 1 }} style={{paddingLeft: "30px"}}>
                                     <h2>Calculus 1</h2>
-                                    <h4>Community for Dr. Cohen's Calculus class</h4>
+                                    <h4>Community for Cohen's Calculus class</h4>
                                     <h4>Status: Make sure to check out the homework discussion</h4>
                                 </Col>
                             </Row>

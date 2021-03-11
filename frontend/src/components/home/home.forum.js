@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../css/home.forum.css'
+import '../../css/home/home.forum.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ForumCard from "./forum.card";
 

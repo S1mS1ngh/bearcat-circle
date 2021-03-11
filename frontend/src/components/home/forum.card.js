@@ -1,5 +1,5 @@
 import React from "react";
-import '../../css/forum.card.css'
+import '../../css/home/forum.card.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Card, Col, Container, Row} from "react-bootstrap";
 import BearcatCircle from "../../static/home/bearcat_circle.svg";

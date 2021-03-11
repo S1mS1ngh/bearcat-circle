@@ -12,7 +12,7 @@ import Groups from './components/groups/groups';
 import { Explore } from './components/explore';
 import { Calender } from './components/calender';
 import { Settings } from './components/settings';
-import GroupOne from "./components/groups/group.one";
+import GroupOne from "./components/groups/one/group.one";
 
 export default class App extends React.Component {
     render() {
