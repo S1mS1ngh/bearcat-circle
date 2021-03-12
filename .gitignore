@@ -2,7 +2,7 @@
 
 # dependencies
 frontend/node_modules
-/node_modules
+node_modules
 /.pnp
 .pnp.js
 
@@ -156,3 +156,6 @@ dmypy.json
 # Pyre type checker
 .pyre/
 /frontend/src/.vscode/
+
+# Editor files
+.vscode
