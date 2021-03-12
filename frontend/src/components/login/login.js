@@ -2,6 +2,7 @@ import React, {useContext, useState} from "react";
 import '../../LoginApp.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import UserContext from "../../contexts/userContext";
+import BearcatCircleLogo from "../../static/bearcat_circle_logo.svg";
 
 export default function Login() {
     const { login, hasLoginError } = useContext(UserContext);
@@ -26,26 +27,26 @@ export default function Login() {
                 </div>
             )}
 
+            <img src={BearcatCircleLogo} alt={"Logo"}/>
+
             <div className="form-group">
-                <label>Username</label>
                 <input
                     className="form-control"
                     type="text"
                     value={username}
                     onChange={onInputChange(setUsername)}
-                    placeholder="Please enter a username"
+                    placeholder="Username"
                     required
                 />
             </div>
 
             <div className="form-group">
-                <label>Password</label>
                 <input
                     className="form-control"
                     type="password"
                     value={password}
                     onChange={onInputChange(setPassword)}
-                    placeholder="Please enter a password"
+                    placeholder="Password"
                     required
                 />
             </div>
@@ -59,7 +60,7 @@ export default function Login() {
 
             <button type="submit" className="btn btn-primary btn-block">Submit</button>
             <p className="forgot-password text-right">
-                Forgot <a href="/#">password?</a>
+                <a href="/#">Forgot password?</a>
             </p>
         </form>
     );
