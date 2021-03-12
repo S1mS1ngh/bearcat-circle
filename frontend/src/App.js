@@ -15,7 +15,6 @@ import { Explore } from './components/explore';
 import { Calender } from './components/calender';
 import { Settings } from './components/settings';
 import GroupOne from "./components/groups/one/group.one";
-import LoginForm from "./components/login/LoginForm";
 
 const USERNAME = "dev";
 const PASSWORD = "password";
@@ -105,7 +104,7 @@ export default function App() {
                 }
                 {!state.user &&
                     <div>
-                        <LoginForm />
+                        <LoginApp />
                     </div>
                 }
             </UserContext.Provider>

@@ -1,12 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import './index.css';
 import './App.css'
 import { Link } from "react-router-dom";
 import userphoto from "./static/nav/user_photo.png";
 import chevrondown from "./static/nav/chevron_down.png";
+import UserContext from "./contexts/userContext";
 
-export default class Sidenav extends React.Component {
-    render() {
+export default function Sidenav() {
+    const { logout } = useContext(UserContext);
+
         return (
             <div id="mySidenav" className="sidenav">
                 <div className="userphoto">
@@ -35,9 +37,9 @@ export default class Sidenav extends React.Component {
                     Settings
                 </Link>
                 <div style={{paddingTop: "190px"}}>
-                    <Link to="/login">Log out</Link>
+                    <Link to="/" onClick={logout}>Log out</Link>
                 </div>
             </div>
         )
-    }
+
 }
