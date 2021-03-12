@@ -6,7 +6,6 @@ import { Route, Switch } from "react-router"
 
 import Login from "./components/login/login";
 import Signup from "./components/login/signup";
-import App from "./App";
 
 export default class LoginApp extends React.Component {
     render() {
@@ -30,12 +29,11 @@ export default class LoginApp extends React.Component {
                     </nav>
                 </div>
 
-                <div className="auth-wrapper" style={{marginTop: "300px"}}>
+                <div className="auth-wrapper">
                     <div className="auth-inner">
                         <Switch>
                             <Route path="/login" component={Login}/>
                             <Route path="/signup" component={Signup}/>
-                            <Route path="/app" component={App}/>
                             <Route component={Login}/>
                         </Switch>
                     </div>

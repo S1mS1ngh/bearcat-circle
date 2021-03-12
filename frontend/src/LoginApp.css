@@ -42,6 +42,7 @@ body, html, .App, #root, .auth-wrapper {
 }
 
 .auth-wrapper {
+    margin-top: 12.5%;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -70,6 +71,15 @@ body, html, .App, #root, .auth-wrapper {
     height: 60px;
     background: #F05454;
     box-shadow: 0 2px 10px lightgray;
+    border-radius: 6px;
+    border-width: 0;
+    font-size: 20px;
+}
+
+.auth-inner button:hover {
+    height: 60px;
+    background: #F05454;
+    box-shadow: 0 2px 10px gray;
     border-radius: 6px;
     border-width: 0;
     font-size: 20px;
