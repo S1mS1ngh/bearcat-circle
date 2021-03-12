@@ -7,7 +7,6 @@ import chevrondown from "./static/nav/chevron_down.png";
 
 export default class Sidenav extends React.Component {
     render() {
-
         return (
             <div id="mySidenav" className="sidenav">
                 <div className="userphoto">
