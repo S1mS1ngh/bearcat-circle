@@ -35,6 +35,7 @@ yarn-error.log*
 __pycache__/
 *.py[cod]
 *$py.class
+__pycache__
 
 # C extensions
 *.so
