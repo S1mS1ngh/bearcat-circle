@@ -1,8 +1,11 @@
+import pprint
 from . import sio
 
 
 # Temporary data
 current_active_users = []
+printer = pprint.PrettyPrinter()
+
 
 @sio.event
 def connect(sid, environ):

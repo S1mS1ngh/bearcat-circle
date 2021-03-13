@@ -2,10 +2,10 @@ version: '3.8'
 
 services:
   chat-service:
-    build: ./server
+    build: ./backend/chat-service/server
     command: uvicorn app.main:app --reload --workers 1 --host 0.0.0.0 --port 5000
     volumes:
-      - ./server:/usr/src/app
+      - ./backend/chat-service/server:/usr/src/app
     ports:
       - 5000:5000
     environment:
@@ -18,7 +18,7 @@ services:
 
   web-db:
     build:
-      context: ./server/db
+      context: ./backend/chat-service/server/db
       dockerfile: Dockerfile
     ports:
       - 5432:5432
@@ -27,3 +27,15 @@ services:
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+  
+  frontend:
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    volumes:
+      - './frontend:/app:cached'
+      - './frontend/node_modules:/app/node_modules:cached'
+    ports:
+      - 3000:3000
+    environment:
+      - NODE_ENV=development

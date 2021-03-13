@@ -11,5 +11,20 @@ class TextSummary(models.Model):
     def __str__(self):
         return self.url
 
+class User(models.Model):
+    id = fields.IntField(pk=True)
+    name = fields.TextField()
+
+    def __str__(self):
+        return self.name
+
+class Message(models.Model):
+    id = fields.IntField(pk=True)
+    message = fields.TextField()
+    user = fields.ForeignKeyField('models.User')
+
+    def __str__(self):
+        return self.message
+
 
 SummarySchema = pydantic_model_creator(TextSummary)

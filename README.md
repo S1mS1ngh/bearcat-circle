@@ -1,3 +1,3 @@
-# Cincy Study
+# Bearcat Circle
 
-A study network project for University of Cincinnati community.
+A study social network for University of Cincinnati community.
