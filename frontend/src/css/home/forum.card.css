@@ -1,6 +1,7 @@
 .forumCard {
     width: 850px;
     height: 220px;
+    box-shadow: 0 2px 10px lightgray;
     border-radius: 6px;
     margin-bottom: 20px;
 }
@@ -30,6 +31,7 @@
 }
 
 .forumCard h5 {
+    height: 100px;
     margin-top: 10px;
     font-size: 15px;
     font-weight: 500;
