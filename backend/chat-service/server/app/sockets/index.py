@@ -1,8 +1,11 @@
+import pprint
 from . import sio
 
 
 # Temporary data
 current_active_users = []
+printer = pprint.PrettyPrinter()
+
 
 @sio.event
 def connect(sid, environ):
@@ -36,4 +39,3 @@ async def disconnect(sid):
             user['presence'] = 'offline'
     print(current_active_users)
     await sio.emit('re_evaluate_status')
-

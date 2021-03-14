@@ -1,8 +1,8 @@
 # Chat service backend
 
-Built with FastAPI framework and Socketio for bidirectional communication.
-
-## Setup
-- Make sure to have python >=3.5
-- Run `pip install -r requirements.txt` to setup dependencies (can also use Poetry)
-- Start server by runnning `python asgi.py`
+Built with:
+- FastAPI framework for RESTful API design
+- Postgres as the main SQL database
+- Socketio for bidirectional communication
+- TortoiseORM for mapping database requests to backend
+- Pytest for unit testing
