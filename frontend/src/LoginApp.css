@@ -42,7 +42,7 @@ body, html, .App, #root, .auth-wrapper, .signup {
 }
 
 .auth-wrapper {
-    height: 1080px;
+    height: 100vh;
     display: flex;
 }
 
