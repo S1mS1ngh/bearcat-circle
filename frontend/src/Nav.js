@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import userphoto from "./static/nav/user_photo.png";
 import chevrondown from "./static/nav/chevron_down.png";
 import Active from "./static/nav/active.svg";
-import Home from "./static/nav/nav_homeicon.svg";
+import Homeunactive from "./static/nav/home_unactive.svg";
 import Chat from "./static/nav/chat_unactive.svg";
 import Groups from "./static/nav/groups_unactive.svg";
 import Explore from "./static/nav/explore_unactive.svg";
@@ -30,10 +30,10 @@ export default function Sidenav() {
                 <Link to="/home">
                     <Row>
                         <Col>
-                            <img style={{boxShadow: "0 0 10px black"}} src={Active} alt=""/>
+                            <img style={{boxShadow: "0 0 10px black", opacity: "0"}} src={Active} alt=""/>
                         </Col>
                         <Col style={{display: "flex", justifyContent: "center", verticalAlign: "center", paddingLeft: "21px" }}>
-                            <img src={Home} alt="Home"/>
+                            <img src={Homeunactive} alt="Home"/>
                         </Col>
                         <Col style={{display: "flex", textAlign: "center", margin: "auto", width: "50%", padding: "0"}}>
                             Home
