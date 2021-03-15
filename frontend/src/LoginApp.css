@@ -42,11 +42,8 @@ body, html, .App, #root, .auth-wrapper, .signup {
 }
 
 .auth-wrapper {
-    margin-top: 12.5%;
+    height: 1080px;
     display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: left;
 }
 
 .auth-inner {

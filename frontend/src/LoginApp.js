@@ -15,7 +15,7 @@ export default class LoginApp extends React.Component {
                     <nav className="navbar navbar-expand-lg navbar-light fixed-top">
                         <div className="container">
                             <Link className="navbar-brand" to={"/login"}>Bearcat Circle</Link>
-                            <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
+                            <div className="collapse navbar-collapse">
                                 <ul className="navbar-nav ml-auto">
                                     <li className="nav-item">
                                         <Link className="nav-link" to={"/login"}>Login</Link>
