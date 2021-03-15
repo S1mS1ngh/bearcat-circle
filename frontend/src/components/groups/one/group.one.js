@@ -25,7 +25,7 @@ export default class GroupOne extends React.Component {
                                 <Card className="groupcard">
                                     <Container style={{padding: "0", textAlign: "center"}}>
                                         <img src={Group1} alt="Group 1" />
-                                        <h2>Calculus 1</h2>
+                                        <h2>Calculus I</h2>
                                         <h3>Community for Cohen's Calculus class</h3>
                                         <h3>53 members</h3>
                                         <h3>Status: Make sure to check out the homework discussion</h3>

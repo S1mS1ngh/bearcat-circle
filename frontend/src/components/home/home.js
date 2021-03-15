@@ -47,7 +47,7 @@ export default class Home extends React.Component {
                                                 <Col style={{padding: "0", margin: "0 0 0 10px"}}>
                                                     <Link to="/groups/one">
                                                         <Button id="groupsCardGroupsButton" style={{backgroundColor: "#F38181"}}>
-                                                            Calculus 1
+                                                            Calculus I
                                                         </Button>
                                                     </Link>
                                                 </Col>
@@ -65,7 +65,7 @@ export default class Home extends React.Component {
                                                 </Col>
                                                 <Col style={{padding: "0", margin: "0 10px 0 0"}}>
                                                     <Button id="groupsCardGroupsButton" style={{backgroundColor: "#95E1D3", padding: "10px"}}>
-                                                        Learning Community
+                                                        ChemE Learning Community
                                                     </Button>
                                                 </Col>
                                             </Row>
