@@ -2,6 +2,7 @@ import React from "react";
 import '../../css/home/addpostpopup.css'
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 
 export default function AddPostPopup({...props}) {
     return (
@@ -11,21 +12,24 @@ export default function AddPostPopup({...props}) {
             aria-labelledby="contained-modal-title-vcenter"
             centered
         >
-            <Modal.Header closeButton>
-                <Modal.Title id="contained-modal-title-vcenter">
-                    Modal heading
+            <Modal.Header style={{backgroundColor: "rgba(0,0,0,.03)"}} closeButton>
+                <Modal.Title style={{color: "#0D1C2E"}} id="contained-modal-title-vcenter">
+                    New Post
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <h4>Centered Modal</h4>
-                <p>
-                    Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
-                    dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta ac
-                    consectetur ac, vestibulum at eros.
-                </p>
+
+                <Form>
+                    <Form.Group controlId="formBasicEmail">
+                        <Form.Label><h5>Title</h5></Form.Label>
+                        <Form.Control type="text" placeholder="Enter Title" />
+                        <Form.Label style={{marginTop: "1vh"}}><h5>Body</h5></Form.Label>
+                        <Form.Control as="textarea" rows={3} />
+                    </Form.Group>
+                </Form>
             </Modal.Body>
             <Modal.Footer>
-                <Button onClick={props.onHide}>Close</Button>
+                <Button onClick={props.onHide} style={{backgroundColor: "#30475E", color: "white"}}>Post</Button>
             </Modal.Footer>
         </Modal>
     );
