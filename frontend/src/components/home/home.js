@@ -3,13 +3,13 @@ import '../../css/home/home.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {Container, Row, Col, Card, Button} from 'react-bootstrap';
-import HomeForum from "./home.forum";
+import HomeForum from "./forum/home.forum";
 import AddGroup from "../../static/plus_button.svg";
 import AddPost from "../../static/home/add_post.svg";
 import SearchBox from "../../static/home/search_box.svg";
 import FilterTags from "../../static/home/filter_tags.svg";
 import {Link} from "react-router-dom";
-import AddPostPopup from "./addpostpopup";
+import AddPostPopup from "./forum/addpostpopup";
 
 //Todo Improve CSS styling if time permits
 

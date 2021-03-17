@@ -1,0 +1,7 @@
+.comments::-webkit-scrollbar {
+    display: none;
+}
+
+.comments {
+    -ms-overflow-style: none;  /* IE and Edge */
+}

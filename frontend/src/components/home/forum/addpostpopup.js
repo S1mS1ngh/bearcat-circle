@@ -1,5 +1,5 @@
 import React from "react";
-import '../../css/home/addpostpopup.css'
+import '../../../css/home/addpostpopup.css'
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";

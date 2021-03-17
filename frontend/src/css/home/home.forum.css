@@ -1,7 +1,11 @@
 /* Home forum component */
 .forum {
-    height: 1000px;
-    overflow-y: hidden;
+    height: 72.5vh;
+    overflow-y: scroll;
     width: 850px;
     z-index: 0;
+}
+
+.forum::-webkit-scrollbar {
+    display: none;
 }
