@@ -20,7 +20,7 @@ export default function Login() {
 
     return (
         <form style={{alignContent:"center"}} onSubmit={onSubmit}>
-            <h3>Sign In</h3>
+            <h3>Login</h3>
             {hasLoginError && (
                 <div className="login-form-error">
                     Login Failed: Incorrect Credentials
