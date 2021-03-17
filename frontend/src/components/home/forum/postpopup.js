@@ -30,14 +30,14 @@ export default function PostPopup({...props}) {
                         <Col xs="auto" className="mr-3 ml-1">
                             <img src={BearcatCircle} alt="Profile"/>
                         </Col>
-                    <Col sm={9} className="mr-3">
+                        <Col sm={9} className="mr-3">
                             <Form.Control
                                 id="commentInput"
                                 placeholder="Type a message"
                             />
                         </Col>
                         <Col xs="auto">
-                            <Button style={{backgroundColor: "#30475E", color: "white"}} className="w-2 pl-4 pr-4" type="submit">
+                            <Button style={{backgroundColor: "#30475E", color: "white"}} className="w-2 pl-4 pr-4">
                                 Post
                             </Button>
                         </Col>

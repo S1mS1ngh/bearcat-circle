@@ -13,7 +13,7 @@ export default class CommentsList extends React.Component {
     }
 
     componentDidMount() {
-        // fetch('https://jsonplaceholder.typicode.com/posts')
+        // fetch('https://jsonplaceholder.typicode.com/comments')
         fetch('SampleComments.json')
             .then(res => res.json())
             .then(result => {
@@ -32,7 +32,7 @@ export default class CommentsList extends React.Component {
             return (
                 <div style={{height: "300px", overflow: "scroll"}} className="comments">
                     {items.map(item => (
-                        <ForumComment name = {item.name} title = {item.title} body = {item.body}/>
+                        <ForumComment id = {item.id} title = {item.title} body = {item.body}/>
                     ))}
                 </div>
             );
