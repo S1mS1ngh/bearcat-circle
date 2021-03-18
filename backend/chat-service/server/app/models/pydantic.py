@@ -9,8 +9,13 @@ class SummaryPayloadSchema(BaseModel):
 class SummaryResponseSchema(SummaryPayloadSchema):
     id: int
 
-class UserPayloadSchema(BaseModel):
-    name: str
+class UserInSchema(BaseModel):
+    username: str
+    password_hash: str
+    major: str
+    first_name: str
+    last_name: str
+    m_number: str
 
-class UserResponseSchema(BaseModel):
+class UserOutSchema(BaseModel):
     id: int

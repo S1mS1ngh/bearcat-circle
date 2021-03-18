@@ -2,8 +2,8 @@
 
 from typing import Union, List
 
-from app.models.pydantic import SummaryPayloadSchema, UserPayloadSchema, UserResponseSchema
-from app.models.tortoise import TextSummary, User, Message
+from app.models.pydantic import SummaryPayloadSchema, UserInSchema, UserOutSchema
+from app.models.tortoise import TextSummary, User
 
 
 async def post(payload: SummaryPayloadSchema) -> int:
@@ -24,26 +24,15 @@ async def get_all() -> List:
     summaries = await TextSummary.all().values()
     return summaries
 
-
-async def post_user(payload: UserPayloadSchema) -> int:
-    user = User(name=payload.name)
-
-    await user.save()
-    return user.id
-
-async def create_message(name: str, message: str):
-    user = await User.filter(name=name).first().values()
-    if user:
-        return user[0]
-    else:
-        user = User(name=name)
-    
-    message = Message(
-        user=user,
-        message=message
+async def create_user(payload: UserInSchema) -> User:
+    user = User(
+        username=payload.username,
+        password_hash=payload.password_hash,
+        major=payload.major,
+        first_name=payload.first_name,
+        last_name=payload.last_name,
+        m_number=payload.m_number,
     )
-    message.save()
-
-async def get_all_messages() -> List:
-    messages = await Message.all().values()
-    return messages
+    print(type(user))
+    await user.save()
+    return user

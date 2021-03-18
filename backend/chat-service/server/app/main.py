@@ -4,7 +4,7 @@ import logging
 
 from fastapi import FastAPI
 
-from app.api import ping, summaries
+from app.api import ping, summaries, user
 from app.sockets import sio_app
 from app.db import init_db
 
@@ -15,6 +15,7 @@ def create_application() -> FastAPI:
     application = FastAPI(title="Bearcat Circle")
     application.include_router(ping.router)
     application.include_router(summaries.router, prefix="/summaries", tags=["summaries"])
+    application.include_router(user.router, prefix="/user", tags=["user"])
     application.mount("/ws", sio_app)
     return application
 

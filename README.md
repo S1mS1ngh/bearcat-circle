@@ -2,7 +2,7 @@
 
 A study social network for University of Cincinnati community.
 
-#Prerequisites
+## Prerequisites
 If you are on windows make sure you have your git config setup properly **otherwise it will not work**
 (Do this before pulling the project)
 
