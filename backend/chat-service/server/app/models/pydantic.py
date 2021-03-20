@@ -1,6 +1,8 @@
 # server/app/models/pydantic.py
 
-from pydantic import BaseModel
+from typing import List, Optional
+
+from pydantic import BaseModel, EmailStr
 
 
 class SummaryPayloadSchema(BaseModel):
@@ -9,13 +11,18 @@ class SummaryPayloadSchema(BaseModel):
 class SummaryResponseSchema(SummaryPayloadSchema):
     id: int
 
-class UserInSchema(BaseModel):
+class User(BaseModel):
     username: str
-    password_hash: str
+    email: Optional[EmailStr] = None
     major: str
-    first_name: str
-    last_name: str
+    first_name: Optional[str] = None
+    last_name: Optional[str] = None
     m_number: str
 
-class UserOutSchema(BaseModel):
-    id: int
+class UserInDB(User):
+    password: str
+    scopes: List[str]
+
+class UserCreate(User):
+    password: str
+    scopes: List[str] = ["me", "viewer"]

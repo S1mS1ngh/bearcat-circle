@@ -14,6 +14,7 @@ class TextSummary(models.Model):
 class User(models.Model):
     id = fields.IntField(pk=True)
     username = fields.CharField(max_length=20, unique=True)
+    email = fields.CharField(max_length=50, unique=True)
     password_hash = fields.CharField(max_length=255)
     major = fields.CharField(max_length=50)
     first_name = fields.CharField(max_length=50)
@@ -145,3 +146,4 @@ class PostComments(models.Model):
         return f"Comment of: {self.user.name}"
 
 SummarySchema = pydantic_model_creator(TextSummary)
+UserSchema = pydantic_model_creator(User)
