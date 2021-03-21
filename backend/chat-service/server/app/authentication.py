@@ -11,8 +11,8 @@ from passlib.context import CryptContext
 from pydantic import ValidationError
 
 from app.config import get_settings, Settings
-from app.models.tortoise import UserSchema, User
-from app.models.pydantic import UserInDB
+from app.api.crud import get_user as crud_get_user
+from app.models.pydantic import User as UserIn, UserInDB, TokenData
 
 
 # Load environment variables
@@ -23,12 +23,9 @@ class OAuth2PasswordBearerWithCookie(OAuth2):
         self,
         tokenUrl: str,
         scheme_name: str = None,
-        scopes: dict = None,
         auto_error: bool = True,
     ):
-        if not scopes:
-            scopes = {}
-        flows = OAuthFlowsModel(password={"tokenUrl": tokenUrl, "scopes": scopes})
+        flows = OAuthFlowsModel(password={"tokenUrl": tokenUrl})
         super().__init__(flows=flows, scheme_name=scheme_name, auto_error=auto_error)
     
     async def __call__(self, request: Request) -> Optional[str]:
@@ -48,35 +45,31 @@ class OAuth2PasswordBearerWithCookie(OAuth2):
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 oauth2_scheme = OAuth2PasswordBearerWithCookie(
-    tokenUrl="token",
-    scopes={
-        "me": "Read information about the current user.",
-        "viewer": "Has read-only access",
-        "admin": "Has full access to all resources",
-    }
+    tokenUrl="token"
 )
 
 async def get_user(username: str):
-    user = await UserSchema.from_queryset_single(User.get(username=username)).first()
+    user = await crud_get_user(username)
+    print(user)
     if not user:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Incorrect username or password",
         )
     
-    return UserInDB(**user.to_dict())
+    return UserInDB(**user)
 
-async verify_password(plain_password, hashed_password):
+def verify_password(plain_password, hashed_password):
     return pwd_context.verify(plain_password, hashed_password)
 
-async get_password_hash(password):
+def get_password_hash(password):
     return pwd_context.hash(password)
 
 async def authenticate_user(username: str, password: str):
     user = await get_user(username=username)
     if not user:
         return None
-    if not verify_password(password, user.password):
+    if not verify_password(password, user.password_hash):
         return None
     return user
 
@@ -90,3 +83,25 @@ def create_access_token(data: dict, expires_delta: Optional[timedelta] = None):
     encoded_jwt = jwt.encode(to_encode, str(settings.secret_key), algorithm=settings.algorithm)
     return encoded_jwt
 
+async def get_current_user(token: str = Depends(oauth2_scheme)):
+    authenticate_value = f"Bearer"
+
+    credentials_exception = HTTPException(
+        status_code=status.HTTP_401_UNAUTHORIZED,
+        detail="Could not validate credentials",
+        headers={"WWW-Authenticate": authenticate_value},
+    )
+
+    try:
+        payload = jwt.decode(token, str(settings.secret_key), algorithm=[settings.algorithm])
+        username: str = payload.get("sub")
+        if username is None:
+            raise credentials_exception
+        token_data = TokenData(username=username)
+    except (JWTError, ValidationError):
+        raise credentials_exception
+    
+    user = await get_user(username=token_data.username)
+    if user is None:
+        raise credentials_exception
+    return user

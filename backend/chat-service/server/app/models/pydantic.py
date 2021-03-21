@@ -11,6 +11,9 @@ class SummaryPayloadSchema(BaseModel):
 class SummaryResponseSchema(SummaryPayloadSchema):
     id: int
 
+class TokenData(BaseModel):
+    username: Optional[str] = None
+
 class User(BaseModel):
     username: str
     email: Optional[EmailStr] = None
@@ -20,9 +23,7 @@ class User(BaseModel):
     m_number: str
 
 class UserInDB(User):
-    password: str
-    scopes: List[str]
+    password_hash: str
 
 class UserCreate(User):
     password: str
-    scopes: List[str] = ["me", "viewer"]

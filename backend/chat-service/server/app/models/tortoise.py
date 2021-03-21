@@ -3,13 +3,6 @@
 from tortoise import fields, models
 from tortoise.contrib.pydantic import pydantic_model_creator
 
-class TextSummary(models.Model):
-    url = fields.TextField()
-    summary = fields.TextField()
-    created_at = fields.DatetimeField(auto_now_add=True)
-
-    def __str__(self):
-        return self.url
 
 class User(models.Model):
     id = fields.IntField(pk=True)
@@ -30,6 +23,9 @@ class User(models.Model):
     post: fields.ReverseRelation["Post"]
     post_likes: fields.ReverseRelation["PostLikes"]
     post_comments: fields.ReverseRelation["PostComments"]
+
+    class PydanticMeta:
+        exclude = ["password_hash", "created_at", "updated_at"]
 
     def __str__(self):
         return f"User: {self.username}. M-number: {self.m_number}. Major: {self.major}"
@@ -145,5 +141,4 @@ class PostComments(models.Model):
     def __str__(self):
         return f"Comment of: {self.user.name}"
 
-SummarySchema = pydantic_model_creator(TextSummary)
 UserSchema = pydantic_model_creator(User)
