@@ -21,7 +21,7 @@ export default class GroupsList extends React.Component {
                                     <img src={Group1} alt="Group 1" />
                                 </Col>
                                 <Col md={{ offset: 1 }} style={{paddingLeft: "30px"}}>
-                                    <h2>Calculus 1</h2>
+                                    <h2>Calculus I</h2>
                                     <h4>Community for Cohen's Calculus class</h4>
                                     <h4>Status: Make sure to check out the homework discussion</h4>
                                 </Col>
