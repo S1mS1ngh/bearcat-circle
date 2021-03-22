@@ -25,7 +25,7 @@ class User(models.Model):
     post_comments: fields.ReverseRelation["PostComments"]
 
     class PydanticMeta:
-        exclude = ["password_hash", "created_at", "updated_at"]
+        exclude = ["password_hash", "created_at", "updated_at", "id"]
 
     def __str__(self):
         return f"User: {self.username}. M-number: {self.m_number}. Major: {self.major}"

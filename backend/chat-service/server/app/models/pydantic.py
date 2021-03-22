@@ -5,11 +5,9 @@ from typing import List, Optional
 from pydantic import BaseModel, EmailStr
 
 
-class SummaryPayloadSchema(BaseModel):
-    url: str
-
-class SummaryResponseSchema(SummaryPayloadSchema):
-    id: int
+class Token(BaseModel):
+    access_token: str
+    token_type: str
 
 class TokenData(BaseModel):
     username: Optional[str] = None

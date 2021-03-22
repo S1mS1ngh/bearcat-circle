@@ -50,7 +50,6 @@ oauth2_scheme = OAuth2PasswordBearerWithCookie(
 
 async def get_user(username: str):
     user = await crud_get_user(username)
-    print(user)
     if not user:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
@@ -93,7 +92,7 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
     )
 
     try:
-        payload = jwt.decode(token, str(settings.secret_key), algorithm=[settings.algorithm])
+        payload = jwt.decode(token, str(settings.secret_key), algorithms=[settings.algorithm])
         username: str = payload.get("sub")
         if username is None:
             raise credentials_exception
