@@ -13,6 +13,9 @@ services:
       - TESTING=0
       - DATABASE_URL=postgres://postgres:postgres@web-db:5432/web_dev
       - DATABASE_TEST_URL=postgres://postgres:postgres@web-db:5432/web_test
+      - ALGORITHM=HS256
+      - SECRET_KEY=bd1262060b5f84d705a8bbe320019238
+
     depends_on:
       - web-db
 
