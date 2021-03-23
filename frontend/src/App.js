@@ -9,7 +9,7 @@ import LoginApp from './LoginApp'
 import UserContext from "./contexts/userContext";
 import Home from './components/home/home';
 import Nav from './Nav'
-import { Chat } from './components/chat';
+import Chat from './components/chat';
 import Groups from './components/groups/groups';
 import Explore from './components/explore/explore';
 import { Calender } from './components/calender';
