@@ -8,6 +8,8 @@ import General from "../../../static/groups/one/General.svg";
 import Search from "../../../static/groups/one/Search.svg";
 import AddGroup from "../../../static/plus_button.svg";
 import Group1 from "../../../static/groups/group1.svg";
+import Invite from "../../../static/groups/Invite.svg"
+import GroupChatScreen from "./GroupChatScreen";
 
 //Todo Improve CSS styling if time permits
 
@@ -15,9 +17,14 @@ export default class GroupOne extends React.Component {
     render() {
         return (
             <div className="groupone">
-                <Link to="/groups">
-                    <h1>Back to Groups</h1>
-                </Link>
+                <Row className="m-0">
+                    <Link to="/groups">
+                        <h1>Back to Groups</h1>
+                    </Link>
+                    <Button id="Invite" className="p-0" style={{backgroundColor: "transparent", borderWidth:"0", marginLeft:"1090px", marginTop: "15px", height: "60px"}}>
+                        <img src={Invite} alt="Invite" />
+                    </Button>
+                </Row>
                 <Container fluid style={{padding: "0"}}>
                     <Row style={{marginLeft: "75px"}}>
                         <Col md="auto" style={{marginRight: "80px", padding: "0"}}>
@@ -73,10 +80,9 @@ export default class GroupOne extends React.Component {
                             <Row style={{marginBottom: "20px"}}>
                                 <img src={Search} style={{boxShadow: "0 2px 10px lightgray"}} alt="Search" />
                             </Row>
-                            {/*<Row style={{marginBottom: "30px"}}>*/}
-                            {/*</Row>*/}
-                            {/*<Row>*/}
-                            {/*</Row>*/}
+                            <Row style={{marginBottom: "30px"}}>
+                                <GroupChatScreen currentUsername={"Test"} />
+                            </Row>
                         </Col>
                     </Row>
                 </Container>
