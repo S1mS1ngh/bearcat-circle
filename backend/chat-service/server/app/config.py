@@ -14,6 +14,9 @@ class Settings(BaseSettings):
     environment: str = os.getenv("ENVIRONMENT", "dev")
     testing: bool = os.getenv("TESTING", 0)
     database_url: AnyUrl = os.environ.get("DATABASE_URL")
+    algorithm: str = os.getenv("ALGORITHM", "HS256")
+    secret_key: str = os.getenv("SECRET_KEY")
+    access_token_expire_minutes: int = os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", 60 * 24 * 30) # 30 days
 
 @lru_cache()
 def get_settings() -> BaseSettings:

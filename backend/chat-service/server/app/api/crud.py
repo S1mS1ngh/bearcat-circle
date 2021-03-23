@@ -2,48 +2,25 @@
 
 from typing import Union, List
 
-from app.models.pydantic import SummaryPayloadSchema, UserPayloadSchema, UserResponseSchema
-from app.models.tortoise import TextSummary, User, Message
+from app.models.pydantic import User
+from app.models.tortoise import User
 
 
-async def post(payload: SummaryPayloadSchema) -> int:
-    summary = TextSummary(
-        url=payload.url,
-        summary="dummy summary",
+async def create_user(payload: dict) -> User:
+    user = User(
+        username=payload['username'],
+        email=payload['email'],
+        password_hash=payload['password'],
+        major=payload['major'],
+        first_name=payload['first_name'],
+        last_name=payload['last_name'],
+        m_number=payload['m_number'],
     )
-    await summary.save()
-    return summary.id
-
-async def get(id: int) -> Union[dict, None]:
-    summary = await TextSummary.filter(id=id).first().values()
-    if summary:
-        return summary[0]
-    return None
-
-async def get_all() -> List:
-    summaries = await TextSummary.all().values()
-    return summaries
-
-
-async def post_user(payload: UserPayloadSchema) -> int:
-    user = User(name=payload.name)
-
     await user.save()
-    return user.id
+    return user
 
-async def create_message(name: str, message: str):
-    user = await User.filter(name=name).first().values()
+async def get_user(username: str) -> Union[dict, None]:
+    user = await User.filter(username=username).first().values()
     if user:
         return user[0]
-    else:
-        user = User(name=name)
-    
-    message = Message(
-        user=user,
-        message=message
-    )
-    message.save()
-
-async def get_all_messages() -> List:
-    messages = await Message.all().values()
-    return messages
+    return None
