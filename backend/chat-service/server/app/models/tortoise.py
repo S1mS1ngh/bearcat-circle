@@ -96,6 +96,7 @@ class Post(models.Model):
     user: fields.ForeignKeyRelation[User] = fields.ForeignKeyField(
         "models.User",
         related_name="posts",
+        on_delete=fields.CASCADE,
     )
     title = fields.CharField(max_length=30)
     content = fields.TextField()
@@ -117,10 +118,12 @@ class PostLike(models.Model):
     post: fields.ForeignKeyRelation[Post] = fields.ForeignKeyField(
         "models.Post",
         related_name="post_likes",
+        on_delete=fields.CASCADE,
     )
     user: fields.OneToOneRelation[User] = fields.OneToOneField(
         "models.User",
         related_name="post_likes",
+        on_delete=fields.CASCADE,
     )
     created_at = fields.DatetimeField(auto_now_add=True)
     updated_at = fields.DatetimeField(auto_now=True)
@@ -136,10 +139,12 @@ class PostComment(models.Model):
     post: fields.ForeignKeyRelation[Post] = fields.ForeignKeyField(
         "models.Post",
         related_name="post_comments",
+        on_delete=fields.CASCADE,
     )
     user: fields.OneToOneRelation[User] = fields.OneToOneField(
         "models.User",
         related_name="post_comments",
+        on_delete=fields.CASCADE,
     )
     content = fields.TextField()
     created_at = fields.DatetimeField(auto_now_add=True)

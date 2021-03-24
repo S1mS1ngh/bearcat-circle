@@ -28,7 +28,7 @@ async def get_one_post(id: int) -> Post_Pydantic:
     del post["user_id"]
     return Post_Pydantic(**post)
 
-@router.delete("/{id}/", response_model=Post_Pydantic)
+@router.delete('/{id}/', response_model=Post_Pydantic)
 async def delete_post(id: int, active_user: UserAuth = Security(get_current_user)):
     post = await crud.get_post_by_id(id)
     if not post:
@@ -42,3 +42,14 @@ async def delete_post(id: int, active_user: UserAuth = Security(get_current_user
     del post["created_at"]
     del post["user_id"]
     return Post_Pydantic(**post)
+
+@router.put('/{id}/', response_model=Post_Pydantic)
+async def update_post(id: int, payload: PostIn, active_user: UserAuth = Security(get_current_user)):
+    post = await crud.get_post_by_id(id)
+    if not post:
+        raise HTTPException(status_code=404, detail="Post not found or belong to current user")
+    
+    updated_post = await crud.update_post_by_id(id, payload, active_user)
+    if not updated_post:
+        raise HTTPException(status_code=404, detail="Post not found or user not authorized to update")
+    return updated_post

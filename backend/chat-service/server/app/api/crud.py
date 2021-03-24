@@ -52,3 +52,15 @@ async def delete_post_by_id(id: int, current_user: UserAuth) -> Union[Post_Pydan
         post = await Post.filter(id=id).first().delete()
         return post
     return None
+
+async def update_post_by_id(id: int, payload: PostIn, current_user: UserAuth) -> Union[Post_Pydantic, None]:
+    post = await Post.filter(id=id).first()
+    user = await User.filter(username=current_user.username).first()
+    if post.user_id == user.id:
+        post = await Post.filter(id=id).update(title=payload.title, content=payload.content)
+        
+        if post:
+            updated_post = await Post.filter(id=id).first()
+            return updated_post
+    
+    return None
