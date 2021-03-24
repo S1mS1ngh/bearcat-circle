@@ -80,8 +80,10 @@ export default class GroupOne extends React.Component {
                             <Row style={{marginBottom: "20px"}}>
                                 <img src={Search} style={{boxShadow: "0 2px 10px lightgray"}} alt="Search" />
                             </Row>
-                            <Row style={{marginBottom: "30px"}}>
-                                <GroupChatScreen currentUsername={"Test"} />
+                            <Row>
+                                <Card>
+                                    <GroupChatScreen currentUsername={"Test"} />
+                                </Card>
                             </Row>
                         </Col>
                     </Row>

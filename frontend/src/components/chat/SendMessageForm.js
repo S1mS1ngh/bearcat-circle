@@ -28,8 +28,7 @@ class SendMessageForm extends Component {
 		const styles = {
 			container: {
 				padding: 20,
-				borderTop: '1px #4C758F solid',
-				marginBottom: 20
+				borderTop: '1px #4C758F solid'
 			},
 			form: {
 				display: 'flex'

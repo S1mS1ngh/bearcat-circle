@@ -114,7 +114,7 @@ class GroupChatScreen extends Component {
 		const styles = {
 			container: {
 				height: '70vh',
-				width: '45.2vw',
+				width: '44.2vw',
 				display: 'flex',
 				flexDirection: 'column'
 			},

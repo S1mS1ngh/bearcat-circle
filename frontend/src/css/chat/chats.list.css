@@ -1,0 +1,37 @@
+/* Home forum component */
+.chatslist {
+    height: 1000px;
+    z-index: 0;
+}
+
+.chatsListCard {
+    width: 580px;
+    height: 200px;
+    box-shadow: 0 2px 10px lightgray;
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.chatsListCard img {
+    margin-left: 40px;
+    margin-top: 30px;
+    height: 60px;
+}
+
+.chatsListCard h3, h4 {
+    margin-top: 20px;
+    overflow-y: hidden;
+}
+
+.chatsListCard h3 {
+    margin-top: 50px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #0D1C2E;
+}
+
+.chatsListCard h4 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #707C97;
+}
