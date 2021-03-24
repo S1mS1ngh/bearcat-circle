@@ -4,7 +4,7 @@ from typing import List, Optional
 from pydantic import BaseModel, EmailStr
 from tortoise.contrib.pydantic import pydantic_model_creator
 
-from app.models.tortoise import User, Post
+from app.models.tortoise import User, Post, PostComment, PostLike
 
 
 class Token(BaseModel):
@@ -39,7 +39,23 @@ class UserIn(BaseModel):
     m_number: int
 
 Post_Pydantic = pydantic_model_creator(Post)
+PostComment_Pydantic = pydantic_model_creator(PostComment)
+PostLike_Pydantic = pydantic_model_creator(PostLike)
 
 class PostIn(BaseModel):
     title: str
     content: str
+
+class PostCommentIn(BaseModel):
+    content: str
+    post_id: int
+
+class PostCommentUpdate(BaseModel):
+    content: str
+
+class PostCommentAll(BaseModel):
+    content: str
+    comment_id: int
+    post_id: int
+    post_author: str
+    username: str

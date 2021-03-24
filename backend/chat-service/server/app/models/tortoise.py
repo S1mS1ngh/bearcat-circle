@@ -21,7 +21,6 @@ class User(models.Model):
     channel_members: fields.OneToOneRelation["ChannelMember"]
     channel_messages: fields.ReverseRelation["ChannelMessage"]
     posts: fields.ReverseRelation["Post"]
-    post_likes: fields.ReverseRelation["PostLike"]
     post_comments: fields.ReverseRelation["PostComment"]
 
     class PydanticMeta:
@@ -120,11 +119,6 @@ class PostLike(models.Model):
         related_name="post_likes",
         on_delete=fields.CASCADE,
     )
-    user: fields.OneToOneRelation[User] = fields.OneToOneField(
-        "models.User",
-        related_name="post_likes",
-        on_delete=fields.CASCADE,
-    )
     created_at = fields.DatetimeField(auto_now_add=True)
     updated_at = fields.DatetimeField(auto_now=True)
 
@@ -141,7 +135,7 @@ class PostComment(models.Model):
         related_name="post_comments",
         on_delete=fields.CASCADE,
     )
-    user: fields.OneToOneRelation[User] = fields.OneToOneField(
+    user: fields.ForeignKeyRelation[User] = fields.ForeignKeyField(
         "models.User",
         related_name="post_comments",
         on_delete=fields.CASCADE,
