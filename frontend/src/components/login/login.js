@@ -11,7 +11,28 @@ export default function Login() {
 
     const onSubmit = e => {
         e.preventDefault();
-        login(username, password);
+        var axios = require('axios');
+        var FormData = require('form-data');
+        var data = new FormData();
+        data.append('username', username);
+        data.append('password', password);
+        // login(username, password);
+        var config = {
+            method: 'post',
+            url: 'http://localhost:5000/auth/login?username=Benb&password=password',
+            headers: {
+                'Content-Type': 'multipart/form-data'
+            },
+            data : data
+        };
+
+        axios(config)
+            .then(function (response) {
+                console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
     };
 
     const onInputChange = setter => e => {
