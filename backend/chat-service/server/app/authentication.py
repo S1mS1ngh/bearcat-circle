@@ -12,7 +12,7 @@ from pydantic import ValidationError
 
 from app.config import get_settings, Settings
 from app.api.crud import get_user as crud_get_user
-from app.models.pydantic import User as UserIn, UserInDB, TokenData
+from app.models.pydantic import UserInDB, TokenData, UserAuth
 
 
 # Load environment variables
@@ -103,4 +103,7 @@ async def get_current_user(token: str = Depends(oauth2_scheme)):
     user = await get_user(username=token_data.username)
     if user is None:
         raise credentials_exception
+    user = user.dict()
+    del user['password_hash']
+    user = UserAuth(**user)
     return user
