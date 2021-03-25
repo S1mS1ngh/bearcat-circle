@@ -2,7 +2,6 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../../css/home/comments.list.css';
 import ForumComment from "./forum.comment";
-import ForumCard from "./forum.card";
 
 export default class CommentsList extends React.Component {
     constructor(props) {
