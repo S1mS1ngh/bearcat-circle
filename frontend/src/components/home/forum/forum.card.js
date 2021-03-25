@@ -16,7 +16,7 @@ export default function ForumCard(props) {
             <PostPopup
                 show={modalShow}
                 onHide={() => setModalShow(false)}
-                id={props.id} title={props.title} body={props.body}
+                id = {props.id} username = {props.username} title = {props.title} content = {props.content}
             />
             <Container fluid>
                 <img style={{position: "absolute", top: "15px", right: "20px"}} src={CardMore} alt="more"/>
@@ -35,10 +35,10 @@ export default function ForumCard(props) {
                     </Col>
                     <Col style={{padding: "0", marginLeft: "40px", marginRight: "40px"}}>
                         <Row style={{marginLeft: "0px"}}>
-                            <h3>{props.id}</h3>
+                            <h3>{props.username}</h3>
                         </Row>
                         <h1>{props.title}</h1>
-                        <h5>{props.body}</h5>
+                        <h5>{props.content}</h5>
                     </Col>
                 </Row>
             </Container>

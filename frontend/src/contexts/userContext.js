@@ -1,7 +1,7 @@
 import { createContext } from "react";
 
 const UserContext = createContext({
-    name: '',
+    student: null,
     auth: false
 });
 

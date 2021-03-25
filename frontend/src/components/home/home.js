@@ -10,15 +10,36 @@ import SearchBox from "../../static/home/search_box.svg";
 import FilterTags from "../../static/home/filter_tags.svg";
 import {Link} from "react-router-dom";
 import AddPostPopup from "./forum/addpostpopup";
+import UserContext from "../../contexts/userContext";
 
 //Todo Improve CSS styling if time permits
 
 export default function Home() {
     const [modalShow, setModalShow] = React.useState(false);
+    const { user } = React.useContext(UserContext);
+
+    const onSubmit = e => {
+        e.preventDefault();
+        const axios = require('axios');
+
+        const config = {
+            withCredentials: 'true',
+            method: 'get',
+            url: 'http://localhost:5000/user/current-user'
+        };
+
+        axios(config)
+            .then(function (response) {
+                console.log(JSON.stringify(response.data));
+            })
+            .catch(function (error) {
+                console.log(error);
+            });
+    };
 
     return (
         <div className="home">
-            <h1>Welcome</h1>
+            <h1>Welcome, {user.student.first_name}</h1>
             <AddPostPopup
                 show={modalShow}
                 onHide={() => setModalShow(false)}
@@ -96,7 +117,7 @@ export default function Home() {
                                 <Container fluid style={{margin: "45px 0px 0px 25px"}}>
                                     <Row>
                                         <Col>
-                                            <Button>
+                                            <Button onClick={onSubmit}>
                                                 Find A Study Group
                                             </Button>
                                         </Col>

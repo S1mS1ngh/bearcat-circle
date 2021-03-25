@@ -16,8 +16,8 @@ export default class ChatsList extends React.Component {
                                 <img src={Profile} alt="Profile" />
                             </Col>
                             <Col md={{ offset: 1 }} style={{paddingLeft: "30px"}}>
-                                <h3 style={{color: "white"}}>Giang Ta</h3>
-                                <h4 style={{color: "white", marginLeft: "-75px", marginTop: "35px"}}>Hello</h4>
+                                <h3 style={{color: "white"}}>Sim Singh</h3>
+                                <h4 style={{color: "white", marginLeft: "-75px", marginTop: "35px"}}>Hi Bearcats!</h4>
                             </Col>
                         </Row>
                     </Container>
@@ -29,8 +29,8 @@ export default class ChatsList extends React.Component {
                                 <img src={Profile} alt="Profile" />
                             </Col>
                             <Col md={{ offset: 1 }} style={{paddingLeft: "30px"}}>
-                                <h3>Giang Ta</h3>
-                                <h4 style={{marginLeft: "-75px", marginTop: "35px"}}>Hello</h4>
+                                <h3>Neville Pinto</h3>
+                                <h4 style={{marginLeft: "-75px", marginTop: "35px"}}>Hey, it's me Neville Pinto.</h4>
                             </Col>
                         </Row>
                     </Container>
@@ -42,8 +42,8 @@ export default class ChatsList extends React.Component {
                                 <img src={Profile} alt="Profile" />
                             </Col>
                             <Col md={{ offset: 1 }} style={{paddingLeft: "30px"}}>
-                                <h3>Giang Ta</h3>
-                                <h4 style={{marginLeft: "-75px", marginTop: "35px"}}>Hello</h4>
+                                <h3>FG Williams</h3>
+                                <h4 style={{marginLeft: "-75px", marginTop: "35px"}}>What's up Enginerds</h4>
                             </Col>
                         </Row>
                     </Container>

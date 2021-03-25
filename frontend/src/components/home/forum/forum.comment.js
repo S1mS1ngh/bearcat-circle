@@ -10,10 +10,10 @@ export default class ForumComment extends React.Component {
                 <Container>
                     <Row className="align-items-center mt-2 mb-2">
                         <Col xs={2}>
-                            <h6 className="m-0">{this.props.id}</h6>
+                            <h6 className="m-0">{this.props.username}</h6>
                         </Col>
                         <Col>
-                            <h6 style={{fontWeight: "400"}} className="m-0">{this.props.body}</h6>
+                            <h6 style={{fontWeight: "400"}} className="m-0">{this.props.content}</h6>
                         </Col>
                     </Row>
                 </Container>

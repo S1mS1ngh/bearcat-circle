@@ -17,9 +17,12 @@ export default function Login() {
         data.append('username', username);
         data.append('password', password);
         const config = {
+            withCredentials: 'true',
+            credentials: 'same-origin',
             method: 'post',
             url: 'http://localhost:5000/auth/login?username=Benb&password=password',
             headers: {
+                Accept: 'application/json',
                 'Content-Type': 'multipart/form-data'
             },
             data: data
@@ -29,12 +32,31 @@ export default function Login() {
             .then(function (response) {
                 // setUser(response.data);
                 console.log(response.data);
-                login("ben");
+                login(response.data);
             })
             .catch(function (error) {
                 console.log(error);
             });
     };
+
+    // const onSubmit = e => {
+    //     const formData = new FormData();
+    //     formData.set('username', username);
+    //     formData.set('password', password);
+    //     const response = request('post', 'http://localhost:5000/auth/login?username=Benb&password=password', formData, {
+    //         'Content-Type': 'multipart/form-data',
+    //     });
+    //
+    //     export default function request(method, url, data, headers = defaultHeaders) {
+    //         return axios({
+    //             method,
+    //             url: url,
+    //             headers,
+    //             data,
+    //             withCredentials: true,
+    //         });
+    //     }
+    // };
 
     const onInputChange = setter => e => {
         setter(e.target.value);

@@ -21,10 +21,10 @@ export default function PostPopup({...props}) {
                 </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <h6 style={{fontWeight: "400", marginBottom: "20px"}}>{props.body}</h6>
+                <h6 style={{fontWeight: "400", marginBottom: "20px"}}>{props.content}</h6>
                 <hr className="mt-2 mb-3"/>
                 <h6>Comments</h6>
-                <CommentsList/>
+                <CommentsList id = {props.id}/>
                 <Form style={{marginTop: "20px"}}>
                     <Form.Row className="align-items-center">
                         <Col xs="auto" className="mr-3 ml-1">

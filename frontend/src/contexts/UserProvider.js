@@ -2,18 +2,18 @@ import React from "react";
 import UserContext from "./userContext";
 
 const UserProvider = ({ children }) => {
-    const [user, setUser] = React.useState({ name: '', auth: false });
+    const [user, setUser] = React.useState({ student: null, auth: false });
 
-    const login = (name) => {
+    const login = (data) => {
         setUser(() => ({
-            name: name,
+            student: data,
             auth: true,
         }));
     };
 
     const logout = () => {
-        setUser((user) => ({
-            name: '',
+        setUser(() => ({
+            student: null,
             auth: false,
         }));
     };

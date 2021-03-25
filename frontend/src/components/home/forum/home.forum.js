@@ -12,15 +12,41 @@ export default class HomeForum extends React.Component {
         };
     }
 
+    // componentDidMount() {
+    //     fetch('SampleForum.json')
+    //         .then((res) => res.json())
+    //         .then(result => {
+    //             this.setState({
+    //                 isLoaded: true,
+    //                 items: result
+    //             });
+    //             console.log(result)
+    //         });
+    // }
+
     componentDidMount() {
-        // fetch('https://jsonplaceholder.typicode.com/posts')
-        fetch('SampleForum.json')
-            .then(res => res.json())
-            .then(result => {
-                this.setState({
+        const axios = require('axios');
+
+        const config = {
+            withCredentials: 'true',
+            credentials: 'same-origin',
+            method: 'get',
+            url: 'http://localhost:5000/post/all'
+        };
+
+        const self = this;
+
+        axios(config)
+            .then(function (response) {
+                // console.log(JSON.stringify(response.data));
+                const items = response.data
+                self.setState({
                     isLoaded: true,
-                    items: result
+                    items: items
                 });
+            })
+            .catch(function (error) {
+                console.log(error);
             });
     }
 
@@ -32,7 +58,7 @@ export default class HomeForum extends React.Component {
             return (
                 <div className="forum">
                     {items.map(item => (
-                        <ForumCard id = {item.id} title = {item.title} body = {item.body} />
+                        <ForumCard id = {item.id} username = {item.username} title = {item.title} content = {item.content} />
                     ))}
                 </div>
             );

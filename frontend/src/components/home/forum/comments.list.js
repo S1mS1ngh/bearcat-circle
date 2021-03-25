@@ -2,6 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../../../css/home/comments.list.css';
 import ForumComment from "./forum.comment";
+import ForumCard from "./forum.card";
 
 export default class CommentsList extends React.Component {
     constructor(props) {
@@ -12,15 +13,41 @@ export default class CommentsList extends React.Component {
         };
     }
 
+    // componentDidMount() {
+    //     // fetch('https://jsonplaceholder.typicode.com/comments')
+    //     fetch('SampleComments.json')
+    //         .then(res => res.json())
+    //         .then(result => {
+    //             this.setState({
+    //                 isLoaded: true,
+    //                 items: result
+    //             });
+    //         });
+    // }
+
     componentDidMount() {
-        // fetch('https://jsonplaceholder.typicode.com/comments')
-        fetch('SampleComments.json')
-            .then(res => res.json())
-            .then(result => {
-                this.setState({
+        const axios = require('axios');
+
+        const config = {
+            withCredentials: 'true',
+            credentials: 'same-origin',
+            method: 'get',
+            url: 'http://localhost:5000/post/' + this.props.id + '/comments/'
+        };
+
+        const self = this;
+
+        axios(config)
+            .then(function (response) {
+                // console.log(JSON.stringify(response.data));
+                const items = response.data
+                self.setState({
                     isLoaded: true,
-                    items: result
+                    items: items
                 });
+            })
+            .catch(function (error) {
+                console.log(error);
             });
     }
 
@@ -32,7 +59,7 @@ export default class CommentsList extends React.Component {
             return (
                 <div style={{height: "300px", overflow: "scroll"}} className="comments">
                     {items.map(item => (
-                        <ForumComment id = {item.id} title = {item.title} body = {item.body}/>
+                        <ForumComment username = {item.username} content = {item.content}/>
                     ))}
                 </div>
             );
