@@ -5,30 +5,31 @@ import UserContext from "../../contexts/userContext";
 import BearcatCircleLogo from "../../static/bearcat_circle_logo.svg";
 
 export default function Login() {
-    const { login, hasLoginError } = useContext(UserContext);
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const { login } = useContext(UserContext);
 
     const onSubmit = e => {
         e.preventDefault();
-        var axios = require('axios');
-        var FormData = require('form-data');
-        var data = new FormData();
+        const axios = require('axios');
+        const FormData = require('form-data');
+        const data = new FormData();
         data.append('username', username);
         data.append('password', password);
-        // login(username, password);
-        var config = {
+        const config = {
             method: 'post',
             url: 'http://localhost:5000/auth/login?username=Benb&password=password',
             headers: {
                 'Content-Type': 'multipart/form-data'
             },
-            data : data
+            data: data
         };
 
         axios(config)
             .then(function (response) {
-                console.log(JSON.stringify(response.data));
+                // setUser(response.data);
+                console.log(response.data);
+                login("ben");
             })
             .catch(function (error) {
                 console.log(error);
@@ -42,11 +43,6 @@ export default function Login() {
     return (
         <form style={{alignContent:"center"}} onSubmit={onSubmit}>
             <h3>Login</h3>
-            {hasLoginError && (
-                <div className="login-form-error">
-                    Login Failed: Incorrect Credentials
-                </div>
-            )}
 
             <img src={BearcatCircleLogo} alt={"Logo"}/>
 
