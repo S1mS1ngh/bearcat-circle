@@ -16,8 +16,8 @@ async def create_post(payload: PostIn, active_user: UserAuth = Security(get_curr
     post = await crud.create_post(payload, active_user)
     return post
 
-@router.get('/all', response_model=List[Post_Pydantic])
-async def get_all_post() -> List[Post_Pydantic]:
+@router.get('/all', response_model=List[dict])
+async def get_all_post() -> List[dict]:
     return await crud.get_all_post()
 
 @router.get('/{id}/', response_model=Post_Pydantic, status_code=200)

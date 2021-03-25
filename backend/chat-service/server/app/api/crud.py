@@ -41,9 +41,17 @@ async def create_post(payload: PostIn, current_user: UserAuth) -> Post_Pydantic:
     await post.save()
     return post
 
-async def get_all_post() -> List[Post_Pydantic]:
-    posts = await Post_Pydantic.from_queryset(Post.all())
-    return posts
+async def get_all_post() -> List[dict]:
+    posts = await Post.all().values()
+    result = []
+    for post in posts:
+        user = await User.get(id=post["user_id"])
+        post.update(username=user.username)
+        del post["updated_at"]
+        del post["created_at"]
+        del post["user_id"]
+        result.append(post)
+    return result
 
 async def get_post_by_id(id: int) -> Union[dict, None]:
     post = await Post.filter(id=id).first().values()
