@@ -63,7 +63,7 @@ export default function AddPostPopup({...props}) {
                 </Form>
             </Modal.Body>
             <Modal.Footer>
-                <Button onClick={onSubmit} style={{backgroundColor: "#30475E", color: "white"}}>Post</Button>
+                <Button onClick={props.onHide} style={{backgroundColor: "#30475E", color: "white"}}>Post</Button>
             </Modal.Footer>
         </Modal>
     );

@@ -30,7 +30,7 @@ export default class ChatsList extends React.Component {
                             </Col>
                             <Col md={{ offset: 1 }} style={{paddingLeft: "30px"}}>
                                 <h3>Neville Pinto</h3>
-                                <h4 style={{marginLeft: "-75px", marginTop: "35px"}}>Hey, it's me Neville Pinto.</h4>
+                                <h4 style={{marginLeft: "-75px", marginTop: "35px"}}>Hey, it's me President Pinto.</h4>
                             </Col>
                         </Row>
                     </Container>
