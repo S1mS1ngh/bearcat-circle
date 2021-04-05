@@ -6,11 +6,6 @@
     margin-bottom: 20px;
 }
 
-.forumCard img {
-    margin-left: 40px;
-    margin-top: 30px;
-}
-
 .forumCard h1, h3, h5 {
     margin: 0;
     overflow-y: hidden;

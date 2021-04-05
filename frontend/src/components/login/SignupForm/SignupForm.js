@@ -19,7 +19,7 @@ const steps = [
 const defaultData = {
     firstName: "Ben",
     lastName: "Bearcat",
-    email: "bearcatbe@mail.uc.edu",
+    email: "bearcat@mail.uc.edu",
     password: "password",
     major: "Chemical Engineering",
     graduation: "May 2024",

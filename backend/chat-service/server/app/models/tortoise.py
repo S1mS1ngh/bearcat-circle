@@ -18,14 +18,13 @@ class User(models.Model):
 
     # Reverse relation fields
     channel: fields.ReverseRelation["Channel"]
-    channel_members: fields.OneToOneRelation["ChannelMembers"]
-    channel_messages: fields.ReverseRelation["ChannelMessages"]
-    post: fields.ReverseRelation["Post"]
-    post_likes: fields.ReverseRelation["PostLikes"]
-    post_comments: fields.ReverseRelation["PostComments"]
+    channel_members: fields.OneToOneRelation["ChannelMember"]
+    channel_messages: fields.ReverseRelation["ChannelMessage"]
+    posts: fields.ReverseRelation["Post"]
+    post_comments: fields.ReverseRelation["PostComment"]
 
     class PydanticMeta:
-        exclude = ["password_hash", "created_at", "updated_at", "id"]
+        exclude = ["password_hash", "created_at", "updated_at"]
 
     def __str__(self):
         return f"User: {self.username}. M-number: {self.m_number}. Major: {self.major}"
@@ -42,19 +41,21 @@ class Channel(models.Model):
     updated_at = fields.DatetimeField(auto_now=True)
 
     # Reverse relation fields
-    channel_members: fields.ReverseRelation["ChannelMembers"]
-    channel_messages: fields.ReverseRelation["ChannelMessages"]
+    channel_members: fields.ReverseRelation["ChannelMember"]
+    channel_messages: fields.ReverseRelation["ChannelMessage"]
+
+    class PydanticMeta:
+        exclude = ["created_at", "updated_at"]
 
     def __str__(self):
         return f"Channel: {self.title}"
 
-class ChannelMembers(models.Model):
+class ChannelMember(models.Model):
     id = fields.IntField(pk=True)
     user: fields.OneToOneRelation[User] = fields.OneToOneField(
         "models.User",
         related_name="channel_members",
         on_delete=fields.CASCADE,
-        to_field="id"
     )
     channel: fields.ForeignKeyRelation[Channel] = fields.ForeignKeyField(
         "models.Channel",
@@ -63,15 +64,17 @@ class ChannelMembers(models.Model):
     created_at = fields.DatetimeField(auto_now_add=True)
     updated_at = fields.DatetimeField(auto_now=True)
 
+    class PydanticMeta:
+        exclude = ["created_at", "updated_at"]
+
     def __str__(self):
         return f"Channel Member: {self.user.name} of channel {self.channel.name}"
 
-class ChannelMessages(models.Model):
+class ChannelMessage(models.Model):
     id = fields.IntField(pk=True)
     sender: fields.ForeignKeyRelation[User] = fields.ForeignKeyField(
         "models.User",
         related_name="channel_messages",
-        to_field="id"
     )
     channel: fields.ForeignKeyRelation[Channel] = fields.ForeignKeyField(
         "models.Channel",
@@ -81,6 +84,9 @@ class ChannelMessages(models.Model):
     created_at = fields.DatetimeField(auto_now_add=True)
     updated_at = fields.DatetimeField(auto_now=True)
 
+    class PydanticMeta:
+        exclude = ["created_at", "updated_at"]
+
     def __str__(self):
         return f"Channel Message: {self.message} of user {self.sender.name}"
 
@@ -88,57 +94,58 @@ class Post(models.Model):
     id = fields.IntField(pk=True)
     user: fields.ForeignKeyRelation[User] = fields.ForeignKeyField(
         "models.User",
-        related_name="post",
-        to_field="id"
+        related_name="posts",
+        on_delete=fields.CASCADE,
     )
-    post_id = fields.IntField()
     title = fields.CharField(max_length=30)
     content = fields.TextField()
     created_at = fields.DatetimeField(auto_now_add=True)
     updated_at = fields.DatetimeField(auto_now=True)
 
     # Reverse relation fields
-    post_likes: fields.ReverseRelation["PostLikes"]
-    post_comments: fields.ReverseRelation["PostComments"]
+    post_likes: fields.ReverseRelation["PostLike"]
+    post_comments: fields.ReverseRelation["PostComment"]
+
+    class PydanticMeta:
+        exclude = ["created_at", "updated_at"]
 
     def __str__(self):
         return f"Post: {self.title} of user {self.user.name}"
 
-class PostLikes(models.Model):
+class PostLike(models.Model):
     id = fields.IntField(pk=True)
     post: fields.ForeignKeyRelation[Post] = fields.ForeignKeyField(
         "models.Post",
         related_name="post_likes",
-        to_field="id"
-    )
-    user: fields.OneToOneRelation[User] = fields.OneToOneField(
-        "models.User",
-        related_name="post_likes",
-        to_field="id"
+        on_delete=fields.CASCADE,
     )
     created_at = fields.DatetimeField(auto_now_add=True)
     updated_at = fields.DatetimeField(auto_now=True)
 
+    class PydanticMeta:
+        exclude = ["created_at", "updated_at"]
+
     def __str__(self):
         return f"Like of: {self.user.name}"
 
-class PostComments(models.Model):
+class PostComment(models.Model):
     id = fields.IntField(pk=True)
     post: fields.ForeignKeyRelation[Post] = fields.ForeignKeyField(
         "models.Post",
         related_name="post_comments",
-        to_field="id"
+        on_delete=fields.CASCADE,
     )
-    user: fields.OneToOneRelation[User] = fields.OneToOneField(
+    user: fields.ForeignKeyRelation[User] = fields.ForeignKeyField(
         "models.User",
         related_name="post_comments",
-        to_field="id"
+        on_delete=fields.CASCADE,
     )
     content = fields.TextField()
     created_at = fields.DatetimeField(auto_now_add=True)
     updated_at = fields.DatetimeField(auto_now=True)
 
+    class PydanticMeta:
+        exclude = ["created_at", "updated_at"]
+
     def __str__(self):
         return f"Comment of: {self.user.name}"
-
-UserSchema = pydantic_model_creator(User)

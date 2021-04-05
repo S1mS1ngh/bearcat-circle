@@ -1,9 +1,9 @@
 import React from 'react';
-import '../../css/home/home.forum.css'
+import '../../css/explore/explore.list.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ForumCard from "./forum.card";
+import ExploreCard from "./explore.card";
 
-export default class HomeForum extends React.Component {
+export default class ExploreList extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -14,7 +14,7 @@ export default class HomeForum extends React.Component {
 
     componentDidMount() {
         // fetch('https://jsonplaceholder.typicode.com/posts')
-        fetch('SampleForum.json')
+        fetch('SampleUpdates.json')
             .then(res => res.json())
             .then(result => {
                 this.setState({
@@ -30,9 +30,9 @@ export default class HomeForum extends React.Component {
             return <div>Loading ... </div>;
         } else {
             return (
-                <div className="forum">
+                <div className="exploreList">
                     {items.map(item => (
-                        <ForumCard id = {item.id} title = {item.title} body = {item.body} />
+                        <ExploreCard name = {item.name} title = {item.title} body = {item.body} styleColor = {item.styleColor}/>
                     ))}
                 </div>
             );

@@ -15,7 +15,7 @@ export default class Groups extends React.Component {
     render() {
         return (
             <div className="groups">
-                <h1>Groups</h1>
+                <h1 style={{margin: "30px 0 25px 60px", textDecoration: "none", fontSize: "36px", fontWeight: "500", color: "#0D1C2E", display: "block", textAlign: "left"}}>Groups</h1>
                 <Container fluid style={{padding: "0"}}>
                     <Row style={{marginLeft: "60px"}}>
                         <Col md="auto" style={{marginRight: "80px"}}>

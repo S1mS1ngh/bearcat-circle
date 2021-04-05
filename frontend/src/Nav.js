@@ -24,7 +24,7 @@ export default function Sidenav() {
                     <img src={userphoto} alt="User"/>
                 </div>
                 <header id="sideNavBarHeader">
-                    Neville Pinto
+                    Ben Bearcat
                     <img src={chevrondown} alt="Options"/>
                 </header>
                 <Link to="/home">

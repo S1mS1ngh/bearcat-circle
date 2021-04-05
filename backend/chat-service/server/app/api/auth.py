@@ -7,7 +7,7 @@ from fastapi.security import OAuth2PasswordRequestForm
 
 from app.api.crud import create_user
 from app.config import get_settings, Settings
-from app.models.pydantic import User
+from app.models.pydantic import UserAuth as User
 from app.authentication import authenticate_user, create_access_token
 
 
@@ -42,6 +42,10 @@ async def login_for_access_token(
     return user
 
 
-@router.post("/logout")
+@router.post("/logout", status_code=205)
 async def user_logout(response: Response):
     response.delete_cookie(key="access_token")
+    message = {
+        "message": "User is logout"
+    }
+    return message
